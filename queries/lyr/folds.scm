@@ -1,2 +1,1 @@
-(section_line) @fold.start
-(section_line) @fold.end
+(section_line) @fold

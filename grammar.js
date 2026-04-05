@@ -7,6 +7,7 @@ module.exports = grammar({
     _line: $ => choice(
       $.tagged_line,
       $.section_line,
+      $.comment_line,
       $.blank_line
     ),
 
@@ -22,12 +23,23 @@ module.exports = grammar({
       optional("\n")
     ),
 
+    comment_line: $ => seq(
+      field("comment", $.comment),
+      optional("\n")
+    ),
+
     tag: $ => choice(
       "or",
       "pa"
     ),
 
     section: $ => /\[[^\]\n]+\]/,
+
+    comment: $ => token(choice(
+      seq("#", /.*/),
+      seq("//", /.*/),
+      seq(";", /.*/)
+    )),
 
     text: $ => /[^\n]*/,
 

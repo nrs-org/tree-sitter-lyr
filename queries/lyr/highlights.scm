@@ -3,4 +3,7 @@
 (tag) @keyword
 (text) @string
 
+(comment) @comment
+
 ":" @punctuation.delimiter
+
