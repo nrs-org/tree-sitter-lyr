@@ -30,7 +30,8 @@ module.exports = grammar({
 
     tag: $ => choice(
       "or",
-      "pa"
+      "pa",
+      "tl"
     ),
 
     section: $ => /\[[^\]\n]+\]/,
