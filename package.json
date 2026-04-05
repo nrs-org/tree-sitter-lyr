@@ -1,0 +1,8 @@
+{
+  "name": "lyr",
+  "module": "index.ts",
+  "private": true,
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.8"
+  }
+}
