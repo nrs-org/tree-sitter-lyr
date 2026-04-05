@@ -22,6 +22,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "comment_line"
+        },
+        {
+          "type": "SYMBOL",
           "name": "blank_line"
         }
       ]
@@ -88,6 +92,31 @@
         }
       ]
     },
+    "comment_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "comment",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "\n"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "tag": {
       "type": "CHOICE",
       "members": [
@@ -104,6 +133,53 @@
     "section": {
       "type": "PATTERN",
       "value": "\\[[^\\]\\n]+\\]"
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "#"
+              },
+              {
+                "type": "PATTERN",
+                "value": ".*"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "//"
+              },
+              {
+                "type": "PATTERN",
+                "value": ".*"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ";"
+              },
+              {
+                "type": "PATTERN",
+                "value": ".*"
+              }
+            ]
+          }
+        ]
+      }
     },
     "text": {
       "type": "PATTERN",

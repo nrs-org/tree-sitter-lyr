@@ -1,5 +1,21 @@
 [
   {
+    "type": "comment_line",
+    "named": true,
+    "fields": {
+      "comment": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "comment",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "section_line",
     "named": true,
     "fields": {
@@ -26,6 +42,10 @@
       "types": [
         {
           "type": "blank_line",
+          "named": true
+        },
+        {
+          "type": "comment_line",
           "named": true
         },
         {
@@ -80,6 +100,10 @@
   },
   {
     "type": "blank_line",
+    "named": true
+  },
+  {
+    "type": "comment",
     "named": true
   },
   {
